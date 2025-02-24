@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 93, 58, 26;
+  --background-start-rgb: 250, 249, 246;
+  --background-end-rgb: 255, 248, 220;
+  --primary-gold: 184, 134, 11;
+  --deep-gold: 166, 124, 0;
+  --light-gold: 255, 248, 220;
+  --dark-brown: 93, 58, 26;
+  --burgundy: 128, 0, 32;
+  --bg-cream: 250, 249, 246;
+  --text-gray: 51, 51, 51;
+  --scroll-gold: 212, 175, 55;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 10, 10, 10;
+    --background-end-rgb: 10, 10, 10;
+    --foreground-rgb: 237, 237, 237;
+  }
+}
+
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: 
+      linear-gradient(
+        to bottom,
+        rgba(var(--background-start-rgb), 0.97),
+        rgba(var(--background-end-rgb), 0.97)
+      ),
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50c20-20 50-20 50 0s-30 20-50 0zm0 0c-20 20-50 20-50 0s30-20 50 0z' fill='%23B8860B' fill-opacity='0.05'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c15-15 40-15 40 0s-25 15-40 0zm0 0c-15 15-40 15-40 0s25-15 40 0z' fill='%23800020' fill-opacity='0.04'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 40c25-25 65-25 65 0s-40 25-65 0zm0 0c-25 25-65 25-65 0s40-25 65 0z' fill='%23B8860B' fill-opacity='0.03'/%3E%3C/svg%3E"),
+      radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 0% 0%, rgba(128, 0, 32, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(184, 134, 11, 0.02) 0%, transparent 50%);
+    background-position: center, center, center, center, center, top left, bottom right;
+    background-size: 100% 100%, 100px 100px, 60px 60px, 80px 80px, 100% 100%, 50% 50%, 50% 50%;
+    background-repeat: no-repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-gold text-white px-6 py-2 rounded-md hover:bg-deep-gold transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-brown bg-opacity-20 text-dark-brown px-6 py-2 rounded-md hover:bg-opacity-30 transition-all duration-200;
+  }
+}
+
+.lotus-pattern {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c15-15 40-15 40 0s-25 15-40 0zm0 0c-15 15-40 15-40 0s25-15 40 0z' fill='%23B8860B' fill-opacity='0.06'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20c10-10 30-10 30 0s-20 10-30 0zm0 0c-10 10-30 10-30 0s20-10 30 0z' fill='%23800020' fill-opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 60px 60px, 40px 40px;
+  background-position: center center, center center;
+  background-repeat: repeat, repeat;
+}
+
+/* 自定义滚动条样式 */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thumb-primary-gold\/20 {
+    scrollbar-color: rgba(184, 134, 11, 0.2) transparent;
+  }
+  
+  .scrollbar-thumb-primary-gold\/40:hover {
+    scrollbar-color: rgba(184, 134, 11, 0.4) transparent;
+  }
+  
+  /* Webkit浏览器的滚动条样式 */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(184, 134, 11, 0.2);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(184, 134, 11, 0.4);
+  }
+}
