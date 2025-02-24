@@ -5,15 +5,50 @@ import DailyWisdom from '@/components/DailyWisdom'
 import ChantingSection from '@/components/ChantingSection'
 import PracticeSection from '@/components/PracticeSection'
 import WishesDisplay from '@/components/WishesDisplay'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Wish } from '@/components/WishesDisplay'
+
+// 从 localStorage 加载心愿数据的函数
+const loadWishesFromStorage = (): Wish[] => {
+  if (typeof window === 'undefined') return []
+  const savedWishes = localStorage.getItem('wishes')
+  if (savedWishes) {
+    try {
+      return JSON.parse(savedWishes).map((wish: any) => ({
+        ...wish,
+        timestamp: new Date(wish.timestamp)
+      }))
+    } catch (error) {
+      console.error('Error loading wishes:', error)
+      return []
+    }
+  }
+  return []
+}
+
+// 保存心愿数据到 localStorage 的函数
+const saveWishesToStorage = (wishes: Wish[]) => {
+  if (typeof window === 'undefined') return
+  try {
+    localStorage.setItem('wishes', JSON.stringify(wishes))
+  } catch (error) {
+    console.error('Error saving wishes:', error)
+  }
+}
 
 export default function Home() {
   const [wishes, setWishes] = useState<Wish[]>([])
 
+  // 组件加载时从 localStorage 读取数据
+  useEffect(() => {
+    const savedWishes = loadWishesFromStorage()
+    setWishes(savedWishes)
+  }, [])
+
   const handleWishComplete = (wish: Wish) => {
     setWishes(prevWishes => {
       const newWishes = [wish, ...prevWishes].slice(0, 5) // 只保留最新的5条
+      saveWishesToStorage(newWishes) // 保存到 localStorage
       return newWishes
     })
   }

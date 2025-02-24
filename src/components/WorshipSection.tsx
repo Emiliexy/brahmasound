@@ -5,6 +5,25 @@ import { useState, useRef, useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import type { Wish } from './WishesDisplay'
 
+// 敏感词列表
+const sensitiveWords = [
+  // 政治相关
+  '政府', '官员', '领导人', '国家主席', '总理', '选举', '民主', '共产党', '国民党',
+  // 不良行为
+  '赌博', '吸毒', '嫖娼', '作弊', '欺诈', '造假',
+  // 违法犯罪
+  '偷窃', '抢劫', '杀人', '犯罪', '非法', '违法', '毒品', '走私',
+  // 迷信邪教
+  '邪教', '封建迷信', '巫术', '咒语', '诅咒', '符咒',
+  // 谩骂歧视
+  '傻逼', '混蛋', '白痴', '智障', '贱', '畜生', '猪狗', '垃圾'
+]
+
+// 检查文本是否包含敏感词
+const containsSensitiveWords = (text: string): boolean => {
+  return sensitiveWords.some(word => text.includes(word))
+}
+
 const PRESS_DURATION = 5000 // 5秒
 const INITIAL_MESSAGE_DELAY = 500 // 0.5秒
 
@@ -47,17 +66,36 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
   const handleWishChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value
     if (text.length <= maxLength) {
+      // 检查是否包含敏感词
+      if (containsSensitiveWords(text)) {
+        toast.error('请文明祈愿，不要包含不当词汇', {
+          duration: 3000,
+          ...errorToastStyle,
+        })
+        return
+      }
       setWishText(text)
     }
   }
 
   const startPress = (isWishButton: boolean) => {
-    if (isWishButton && !wishText.trim()) {
-      toast.error('请先填写祈愿', {
-        duration: 3000,
-        ...errorToastStyle,
-      })
-      return
+    if (isWishButton) {
+      if (!wishText.trim()) {
+        toast.error('请先填写祈愿', {
+          duration: 3000,
+          ...errorToastStyle,
+        })
+        return
+      }
+
+      // 再次检查敏感词
+      if (containsSensitiveWords(wishText)) {
+        toast.error('祈愿内容包含不当词汇，请修改后重试', {
+          duration: 3000,
+          ...errorToastStyle,
+        })
+        return
+      }
     }
 
     toast('请长按5秒完成礼佛', {
