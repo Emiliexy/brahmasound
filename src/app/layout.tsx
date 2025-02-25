@@ -83,6 +83,12 @@ export default function RootLayout({
     <html lang="zh">
       <head>
         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2909094795372025"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TMDX45V18R"
           strategy="afterInteractive"
         />
@@ -95,12 +101,6 @@ export default function RootLayout({
             gtag('config', 'G-TMDX45V18R');
           `}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2909094795372025"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <Script id="schema-org" type="application/ld+json">
           {`
             {

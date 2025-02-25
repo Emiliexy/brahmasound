@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Host
+Host: https://brahmasound.com
+
+# Sitemaps
+Sitemap: https://brahmasound.com/sitemap.xml
+Sitemap: https://brahmasound.com/server-sitemap.xml
