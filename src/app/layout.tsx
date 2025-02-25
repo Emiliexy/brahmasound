@@ -64,7 +64,6 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-site-verification',
-    baidu: 'your-baidu-site-verification',
   },
   alternates: {
     canonical: 'https://brahmasound.com',
