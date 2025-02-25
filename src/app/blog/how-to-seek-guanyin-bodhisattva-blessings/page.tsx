@@ -22,6 +22,8 @@ export default function GuanYinBlessingsGuide() {
           <p>
             在全球各地，无论是家庭的困境，还是个人的困扰，信徒们都愿意向观世音菩萨祈愿，求得她的庇佑与保佑。对于信徒来说，祈愿的过程不仅仅是求得帮助，更是与观世音菩萨建立心灵联系、增强信仰的过程。
           </p>
+          <p>观音菩萨的&quot;慈悲&quot;是无边无际的。</p>
+          <p>我们应该以&quot;真&quot;、&quot;诚&quot;、&quot;善&quot;的心来祈求。</p>
         </div>
       </section>
 
