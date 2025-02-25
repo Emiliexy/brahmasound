@@ -44,7 +44,7 @@ export default function GuanYinDanGuide() {
           <p>在观音诞这一天，信徒们会遵循传统习俗进行各种祭拜活动：</p>
           <ul className="list-disc list-inside mt-4 space-y-4 ml-4">
             <li><span className="font-bold">祭品准备：</span>传统上，信徒会准备香火、鲜花、供果等祭品。香火象征着清净与敬意，鲜花则代表敬奉与庄严。</li>
-            <li><span className="font-bold">焚香祈愿：</span>拜拜的过程一般先点香，然后双手合十，默念观音菩萨的名号"南无观世音菩萨"。许多人会在此过程中许下自己的愿望，祈求观音菩萨的庇佑。</li>
+            <li><span className="font-bold">焚香祈愿：</span>拜拜的过程一般先点香，然后双手合十，默念观音菩萨的名号&quot;南无观世音菩萨&quot;。许多人会在此过程中许下自己的愿望，祈求观音菩萨的庇佑。</li>
             <li><span className="font-bold">诵经与拜佛：</span>在庙宇中，除了焚香外，信徒们还会进行诵经、拜佛，特别是《大悲咒》和《观音心咒》，这两部经文能够帮助清净身心，化解业障。</li>
             <li><span className="font-bold">放生与慈善：</span>许多信徒还会选择在观音诞当天放生，象征放下业障，积累福德，借此向观音菩萨表达感恩与回报。</li>
           </ul>
@@ -84,7 +84,7 @@ export default function GuanYinDanGuide() {
             </div>
             <div>
               <h3 className="font-bold mb-2">三、点香与祈祷</h3>
-              <p>点燃香火后，双手合十，站立在佛像前，诚心祈求自己的愿望。在心中默念"南无观世音菩萨"，并持续几分钟，保持专注与敬意。</p>
+              <p>点燃香火后，双手合十，站立在佛像前，诚心祈求自己的愿望。在心中默念&quot;南无观世音菩萨&quot;，并持续几分钟，保持专注与敬意。</p>
             </div>
             <div>
               <h3 className="font-bold mb-2">四、诵经或持咒</h3>
