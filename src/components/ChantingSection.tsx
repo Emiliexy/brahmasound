@@ -118,6 +118,25 @@ const ChantingSection = () => {
     }
   }, [currentSutra])
 
+  useEffect(() => {
+    if (isPlaying) {
+      const interval = progressInterval.current;
+      progressInterval.current = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            if (interval) clearInterval(interval);
+            return 100;
+          }
+          return prev + 1;
+        });
+      }, 1000);
+
+      return () => {
+        if (interval) clearInterval(interval);
+      };
+    }
+  }, [isPlaying]);
+
   const updateProgress = () => {
     if (audioRef.current) {
       const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100

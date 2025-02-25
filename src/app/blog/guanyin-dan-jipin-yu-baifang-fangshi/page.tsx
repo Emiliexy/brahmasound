@@ -137,6 +137,7 @@ export default function GuanYinDanOfferings() {
           <p>
             通过了解观音诞祭品与摆放方式，信徒们不仅能更好地进行祈愿，也能深刻感受到这一天背后的深厚信仰与佛教文化。无论身处何地，虔诚的心和庄重的祭拜将为每一位信徒带来平安与庇佑。
           </p>
+          <p>供品的摆放应遵循&quot;清净庄严&quot;的原则。</p>
         </div>
       </section>
 

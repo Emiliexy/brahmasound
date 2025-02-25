@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { toast } from 'react-hot-toast'
 import type { Wish } from './WishesDisplay'
 

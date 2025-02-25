@@ -14,7 +14,7 @@ const loadWishesFromStorage = (): Wish[] => {
   const savedWishes = localStorage.getItem('wishes')
   if (savedWishes) {
     try {
-      return JSON.parse(savedWishes).map((wish: any) => ({
+      return JSON.parse(savedWishes).map((wish: Wish) => ({
         ...wish,
         timestamp: new Date(wish.timestamp)
       }))

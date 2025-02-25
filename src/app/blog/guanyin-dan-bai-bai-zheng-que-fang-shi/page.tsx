@@ -125,6 +125,8 @@ export default function GuanYinDanGuide() {
           <p>
             无论是在庙宇中的盛大仪式，还是在家中的简单拜祭，观音诞的庆祝方式都表达了人们对慈悲与智慧的追求，以及愿意帮助他人、化解痛苦的精神。
           </p>
+          <p>在观音菩萨面前，我们应该以&quot;至诚恭敬&quot;的心态来礼拜。</p>
+          <p>我们应该以&quot;清净心&quot;来礼拜观音菩萨。</p>
         </div>
       </section>
 
