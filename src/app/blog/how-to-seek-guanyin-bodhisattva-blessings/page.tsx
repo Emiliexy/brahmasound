@@ -17,7 +17,7 @@ export default function GuanYinBlessingsGuide() {
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">引言：观世音菩萨的慈悲与庇佑</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>
-            观世音菩萨，以"大悲菩萨"之名，广受世界各地佛教信徒的尊敬与崇拜。她是佛教中最具慈悲心的菩萨之一，象征着无私的救赎与无限的关怀。观世音菩萨时刻关注着世间的痛苦与困苦，愿意倾听一切求助的声音，并施以救赎与庇佑。
+            观世音菩萨，以&quot;大悲菩萨&quot;之名，广受世界各地佛教信徒的尊敬与崇拜。她是佛教中最具慈悲心的菩萨之一，象征着无私的救赎与无限的关怀。观世音菩萨时刻关注着世间的痛苦与困苦，愿意倾听一切求助的声音，并施以救赎与庇佑。
           </p>
           <p>
             在全球各地，无论是家庭的困境，还是个人的困扰，信徒们都愿意向观世音菩萨祈愿，求得她的庇佑与保佑。对于信徒来说，祈愿的过程不仅仅是求得帮助，更是与观世音菩萨建立心灵联系、增强信仰的过程。
@@ -32,7 +32,7 @@ export default function GuanYinBlessingsGuide() {
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观世音菩萨的起源与象征</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>
-            观世音菩萨源自印度的佛教文化，她的名字"观世音"指的是"观世间所有声音"，也象征着她能听到世间众生的苦痛与需求。作为慈悲与智慧的象征，观世音菩萨总是化身为众生需要的模样，广泛地救度苦难中的人们。
+            观世音菩萨源自印度的佛教文化，她的名字&quot;观世音&quot;指的是&quot;观世间所有声音&quot;，也象征着她能听到世间众生的苦痛与需求。作为慈悲与智慧的象征，观世音菩萨总是化身为众生需要的模样，广泛地救度苦难中的人们。
           </p>
           <p>
             在中国，尤其是浙江省的普陀山，观世音菩萨的信仰格外兴盛。普陀山被视为菩萨显现神迹的圣地，吸引着成千上万的信徒前来朝拜祈愿。
