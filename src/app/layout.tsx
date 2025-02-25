@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   applicationName: 'BrahmaSound 梵海清音',
   authors: [{ name: 'BrahmaSound Team' }],
   generator: 'Next.js',
+  other: {
+    'google-adsense-account': 'ca-pub-2909094795372025'
+  },
   icons: {
     icon: '/images/icon/logo.png',
     apple: '/images/icon/logo.png',
