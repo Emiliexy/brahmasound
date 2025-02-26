@@ -13,7 +13,7 @@ export default function WhoIsGuanYin() {
       </header>
 
       {/* 引言 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">引言：观世音菩萨是谁？</h2>
         <p className="text-lg leading-loose text-black font-song">
           在佛教文化中，观世音菩萨是大慈大悲的象征，她普渡众生、化解苦难，是许多信徒心中的庇护神。她被广泛崇敬，尤其在中国，拥有众多信徒。本文将探讨观世音菩萨的起源、她与普陀山的渊源以及她在佛教中的重要地位。
@@ -21,7 +21,7 @@ export default function WhoIsGuanYin() {
       </section>
 
       {/* 正文板块1 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观世音菩萨的起源</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>
@@ -37,7 +37,7 @@ export default function WhoIsGuanYin() {
       </section>
 
       {/* 正文板块2 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音菩萨与普陀山</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>
@@ -67,7 +67,7 @@ export default function WhoIsGuanYin() {
       </section>
 
       {/* 正文板块3 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音菩萨的慈悲精神</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>
@@ -83,7 +83,7 @@ export default function WhoIsGuanYin() {
       </section>
 
       {/* 结语 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">结语：观音菩萨的影响</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>

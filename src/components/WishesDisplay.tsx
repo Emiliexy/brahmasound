@@ -45,34 +45,36 @@ const WishesDisplay = ({ wishes }: WishesDisplayProps) => {
         </h2>
       </div>
       
-      <div className="space-y-3">
-        {wishesWithId.length === 0 ? (
-          <p className="text-center text-gray-500 font-song py-4">暂无心愿</p>
-        ) : (
-          wishesWithId.map((wish, index) => (
-            <div 
-              key={index}
-              className="bg-white/60 p-4 rounded-lg border border-primary-gold/20 transition-all duration-300 hover:border-primary-gold/40 hover:scale-[1.02] hover:bg-white/80 shadow-sm"
-            >
-              <p className="text-dark-brown font-song line-clamp-2">
-                {wish.text}
-              </p>
-              <div className="flex justify-between items-center mt-2">
-                <p className="text-xs text-gray-500">
-                  {wish.timestamp.toLocaleString('zh-CN', {
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  })}
+      <div className="h-[180px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary-gold/40 hover:scrollbar-thumb-primary-gold/60 pr-2 border-y border-primary-gold/20">
+        <div className="space-y-3 py-2">
+          {wishesWithId.length === 0 ? (
+            <p className="text-center text-gray-500 font-song py-4">暂无心愿</p>
+          ) : (
+            wishesWithId.map((wish, index) => (
+              <div 
+                key={index}
+                className="bg-white/60 p-4 rounded-lg border border-primary-gold/20 transition-all duration-300 hover:border-primary-gold/40 hover:scale-[1.02] hover:bg-white/80 shadow-sm mx-1"
+              >
+                <p className="text-dark-brown font-song line-clamp-2">
+                  {wish.text}
                 </p>
-                <p className="text-xs text-primary-gold/80 font-song">
-                  莲友{wish.lianYouId}
-                </p>
+                <div className="flex justify-between items-center mt-2">
+                  <p className="text-xs text-gray-500">
+                    {wish.timestamp.toLocaleString('zh-CN', {
+                      month: 'long',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    })}
+                  </p>
+                  <p className="text-xs text-primary-gold/80 font-song">
+                    莲友{wish.lianYouId}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </div>
     </div>
   )

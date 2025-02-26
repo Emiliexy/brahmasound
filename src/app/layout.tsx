@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Toaster } from 'react-hot-toast'
 import Script from 'next/script'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://brahmasound.com'),
@@ -83,13 +86,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh">
+    <html lang="zh-CN">
       <head>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2909094795372025"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TMDX45V18R"
@@ -138,7 +141,7 @@ export default function RootLayout({
       </head>
       <body className="lotus-pattern">
         <Navbar />
-        <main className="min-h-screen px-4 py-8 max-w-7xl mx-auto">
+        <main className="min-h-screen px-2 sm:px-4 py-4 sm:py-8 max-w-7xl mx-auto">
           {children}
         </main>
         <Footer />

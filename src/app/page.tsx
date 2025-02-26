@@ -5,6 +5,7 @@ import DailyWisdom from '@/components/DailyWisdom'
 import ChantingSection from '@/components/ChantingSection'
 import PracticeSection from '@/components/PracticeSection'
 import WishesDisplay from '@/components/WishesDisplay'
+import BuddhistCalendar from '@/components/BuddhistCalendar'
 import { useState, useEffect } from 'react'
 import type { Wish } from '@/components/WishesDisplay'
 
@@ -54,11 +55,11 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4">
       {/* 主内容区和侧边栏布局 */}
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* 主内容区 */}
-        <div className="flex-1 space-y-16">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-8">
+        {/* 左侧内容区 */}
+        <div className="flex-1 space-y-8 sm:space-y-16">
           <section id="worship">
             <WorshipSection onWishComplete={handleWishComplete} />
           </section>
@@ -66,21 +67,24 @@ export default function Home() {
           <section id="chanting">
             <ChantingSection />
           </section>
+
+          {/* 佛法修行模块（移到左侧） */}
+          <section id="practice">
+            <PracticeSection />
+          </section>
         </div>
 
-        {/* 侧边栏 */}
+        {/* 右侧边栏 */}
         <div className="lg:w-80 lg:flex-shrink-0">
-          <div className="sticky top-24" style={{ marginBottom: 'calc(100vh - 800px)' }}>
-            <WishesDisplay wishes={wishes} />
-            <DailyWisdom />
+          <div className="sticky top-20">
+            <div className="space-y-6">
+              <WishesDisplay wishes={wishes} />
+              <BuddhistCalendar />
+              <DailyWisdom />
+            </div>
           </div>
         </div>
       </div>
-
-      {/* 佛法修行模块（全宽显示） */}
-      <section id="practice" className="mt-16">
-        <PracticeSection />
-      </section>
     </div>
   )
 }

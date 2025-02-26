@@ -3,19 +3,19 @@ import Link from 'next/link'
 
 export default function GuanYinDanGuide() {
   return (
-    <article className="max-w-4xl mx-auto bg-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-8 lg:p-12 my-8">
+    <article className="max-w-4xl mx-auto bg-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 lg:p-12 my-4 sm:my-8">
       {/* 标题和发布时间 */}
-      <header className="text-center mb-16">
-        <h1 className="text-3xl lg:text-4xl font-kai font-bold text-burgundy mb-4">
+      <header className="text-center mb-8 sm:mb-16">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-kai font-bold text-burgundy mb-4">
           观音诞如何拜拜？详细指南与习俗解读
         </h1>
         <time className="text-gray-500 font-song">2025年2月12日</time>
       </header>
 
       {/* 引言 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
-        <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">引言：什么是观音诞？</h2>
-        <div className="text-lg leading-loose text-black font-song">
+      <section className="mb-8 sm:mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-md border border-primary-gold/20">
+        <h2 className="text-lg sm:text-xl lg:text-2xl font-kai font-bold text-burgundy mb-4 sm:mb-6">引言：什么是观音诞？</h2>
+        <div className="text-base sm:text-lg leading-loose text-black font-song">
           <p>
             观音诞是指纪念观世音菩萨的诞生、成道及涅槃的节日。在中国，尤其是在一些佛教文化盛行的地方，观音诞被视为一个重要的宗教节日。不同地区的信徒会在这一天举行各种形式的拜祭活动，以表达对观音菩萨的敬仰与祈求。
           </p>
@@ -28,7 +28,7 @@ export default function GuanYinDanGuide() {
       </section>
 
       {/* 正文板块1 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音诞的文化背景</h2>
         <div className="text-lg leading-loose text-black font-song">
           <p>
@@ -38,7 +38,7 @@ export default function GuanYinDanGuide() {
       </section>
 
       {/* 正文板块2 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音诞拜拜的习俗与意义</h2>
         <div className="text-lg leading-loose text-black font-song">
           <p>在观音诞这一天，信徒们会遵循传统习俗进行各种祭拜活动：</p>
@@ -69,7 +69,7 @@ export default function GuanYinDanGuide() {
       </section>
 
       {/* 正文板块3 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音诞拜拜的正确步骤</h2>
         <div className="text-lg leading-loose text-black font-song">
           <p>如果你想在家里举行简单的观音诞拜拜，可以参考以下步骤：</p>
@@ -116,7 +116,7 @@ export default function GuanYinDanGuide() {
       </section>
 
       {/* 结语 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">结语：观音诞的精神与意义</h2>
         <div className="space-y-6 text-lg leading-loose text-black font-song">
           <p>

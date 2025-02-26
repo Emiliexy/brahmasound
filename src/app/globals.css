@@ -30,18 +30,12 @@
     background: 
       linear-gradient(
         to bottom,
-        rgba(var(--background-start-rgb), 0.97),
-        rgba(var(--background-end-rgb), 0.97)
+        rgba(var(--background-start-rgb), 0.95),
+        rgba(var(--background-end-rgb), 0.95)
       ),
-      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50c20-20 50-20 50 0s-30 20-50 0zm0 0c-20 20-50 20-50 0s30-20 50 0z' fill='%23B8860B' fill-opacity='0.05'/%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c15-15 40-15 40 0s-25 15-40 0zm0 0c-15 15-40 15-40 0s25-15 40 0z' fill='%23800020' fill-opacity='0.04'/%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 40c25-25 65-25 65 0s-40 25-65 0zm0 0c-25 25-65 25-65 0s40-25 65 0z' fill='%23B8860B' fill-opacity='0.03'/%3E%3C/svg%3E"),
-      radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 0% 0%, rgba(128, 0, 32, 0.02) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, rgba(184, 134, 11, 0.02) 0%, transparent 50%);
-    background-position: center, center, center, center, center, top left, bottom right;
-    background-size: 100% 100%, 100px 100px, 60px 60px, 80px 80px, 100% 100%, 50% 50%, 50% 50%;
-    background-repeat: no-repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+      radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.05) 0%, transparent 70%),
+      radial-gradient(circle at 0% 100%, rgba(128, 0, 32, 0.03) 0%, transparent 60%);
+    background-attachment: fixed;
     min-height: 100vh;
   }
 }
@@ -75,12 +69,12 @@
     scrollbar-width: thin;
   }
   
-  .scrollbar-thumb-primary-gold\/20 {
-    scrollbar-color: rgba(184, 134, 11, 0.2) transparent;
+  .scrollbar-thumb-primary-gold\/40 {
+    scrollbar-color: rgba(184, 134, 11, 0.4) transparent;
   }
   
-  .scrollbar-thumb-primary-gold\/40:hover {
-    scrollbar-color: rgba(184, 134, 11, 0.4) transparent;
+  .scrollbar-thumb-primary-gold\/60:hover {
+    scrollbar-color: rgba(184, 134, 11, 0.6) transparent;
   }
   
   /* Webkit浏览器的滚动条样式 */
@@ -89,15 +83,16 @@
   }
   
   .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgba(184, 134, 11, 0.1);
+    border-radius: 3px;
   }
   
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: rgba(184, 134, 11, 0.2);
+    background-color: rgba(184, 134, 11, 0.4);
     border-radius: 3px;
   }
   
   .scrollbar-thin:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(184, 134, 11, 0.4);
+    background-color: rgba(184, 134, 11, 0.6);
   }
 }
