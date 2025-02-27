@@ -27,7 +27,7 @@ export default function GuanYinKaiKu2025() {
         </h2>
         <div className="text-lg leading-loose text-black font-song space-y-4">
           <p>
-            "开库"和"借库"是佛教信仰中常见的概念，尤其在与观音菩萨的祈愿相关的传统中，这两个词汇代表了向菩萨祈求财富和顺利的过程。
+            &quot;开库&quot;和&quot;借库&quot;是佛教信仰中常见的概念，尤其在与观音菩萨的祈愿相关的传统中，这两个词汇代表了向菩萨祈求财富和顺利的过程。
           </p>
           <p>
             <strong>观音开库：</strong>通常是指信徒通过祈愿，请求观音菩萨开启财富之门，让自己的财运变得更加顺利。在传统习俗中，信徒相信，观音菩萨会因其大慈大悲，帮助开辟财富的源泉。

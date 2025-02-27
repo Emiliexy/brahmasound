@@ -4,9 +4,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Toaster } from 'react-hot-toast'
 import Script from 'next/script'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://brahmasound.com'),
