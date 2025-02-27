@@ -16,7 +16,7 @@ export default function GuanYinKaiKu2025() {
       <section className="mb-8 sm:mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-md border border-primary-gold/20">
         <h2 className="text-lg sm:text-xl lg:text-2xl font-kai font-bold text-burgundy mb-4 sm:mb-6">引言</h2>
         <p className="text-lg leading-loose text-black font-song">
-          观音菩萨不仅是慈悲和智慧的象征，也被许多信徒认为是能带来好运和保佑的守护神。每到新的一年，信徒们常常会进行祈愿，希望能够借助观音菩萨的庇佑，获得财富和事业上的顺利。尤其是在2025年之际，许多人开始关注"观音开库2025"和"观音借库2025"的话题，期待通过祈愿，打开新的财富和机遇之门。
+          观音菩萨不仅是慈悲和智慧的象征，也被许多信徒认为是能带来好运和保佑的守护神。每到新的一年，信徒们常常会进行祈愿，希望能够借助观音菩萨的庇佑，获得财富和事业上的顺利。尤其是在2025年之际，许多人开始关注&quot;观音开库2025&quot;和&quot;观音借库2025&quot;的话题，期待通过祈愿，打开新的财富和机遇之门。
         </p>
       </section>
 
