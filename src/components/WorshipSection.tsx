@@ -184,8 +184,8 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
       </div>
 
       {/* 祈愿区域 */}
-      <div className="flex gap-6">
-        <div className="w-[600px] relative">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+        <div className="w-full lg:w-[600px] relative">
           <textarea
             value={wishText}
             onChange={handleWishChange}
@@ -198,7 +198,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
           </div>
         </div>
         
-        <div className="flex flex-col h-24 justify-between flex-1">
+        <div className="flex flex-col gap-4 lg:h-24 lg:justify-between flex-1">
           <div className="relative">
             <button
               onMouseDown={() => startPress(true)}

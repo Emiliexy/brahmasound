@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function PrayerThanksgivingGuide() {
   return (

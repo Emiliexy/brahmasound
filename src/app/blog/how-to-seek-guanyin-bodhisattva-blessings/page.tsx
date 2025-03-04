@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function GuanYinBlessingsGuide() {
   return (
@@ -136,15 +138,11 @@ export default function GuanYinBlessingsGuide() {
         </div>
       </section>
 
-      {/* 结语 */}
-      <section className="mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
-        <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">结语：信仰的力量与观世音菩萨的庇佑</h2>
-        <div className="space-y-6 text-lg leading-loose text-black font-song">
-          <p>
-            观音菩萨的慈悲与智慧，为无数信徒带来了希望与安慰。无论面对何种困境，信徒们都相信，只要心存信仰，虔诚祈愿，菩萨的庇佑将会降临，带来平安、智慧与解脱。在观世音菩萨的庇佑下，信徒们在生活中逐渐变得坚强、充满智慧。
-          </p>
-        </div>
-      </section>
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/how-to-seek-guanyin-bodhisattva-blessings"
+        articles={articles}
+      />
 
       {/* 返回按钮 */}
       <div className="text-center">

@@ -1,15 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function GuanYinKaiKu2025() {
   return (
-    <article className="max-w-4xl mx-auto bg-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 lg:p-12 my-4 sm:my-8">
-      {/* 标题和发布时间 */}
+    <article className="max-w-4xl mx-auto px-4 py-8">
+      {/* 文章标题 */}
       <header className="text-center mb-8 sm:mb-16">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-kai font-bold text-burgundy mb-4">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-kai text-burgundy mb-4">
           观音开库2025与观音借库2025：如何在新的一年向观音菩萨祈愿财富与顺利
         </h1>
-        <time className="text-gray-500 font-song">2025年2月12日</time>
+        <div className="flex items-center justify-center gap-4 text-gray-600">
+          <time className="text-gray-500 font-song">2025年2月28日</time>
+        </div>
       </header>
 
       {/* 引言 */}
@@ -181,20 +185,11 @@ export default function GuanYinKaiKu2025() {
         </div>
       </section>
 
-      {/* 结语 */}
-      <section className="mb-8 sm:mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-md border border-primary-gold/20">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-kai font-bold text-burgundy mb-4 sm:mb-6">
-          结语：观音菩萨的庇佑与财富
-        </h2>
-        <div className="text-lg leading-loose text-black font-song space-y-4">
-          <p>
-            通过向观音菩萨祈求开库与借库，信徒们不仅能够获得财富上的庇佑，更能够在心灵和精神上得到支持。在2025年，开启一个新的人生旅程，凭借观音菩萨的慈悲与智慧，期待每一位信徒都能在事业、财富和生活中获得新的机遇与成功。
-          </p>
-          <p>
-            无论是通过焚香、供品、诵经还是行善积德，信徒们都应牢记：观音菩萨的庇佑，源自内心的真诚与虔诚。
-          </p>
-        </div>
-      </section>
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/guanyin-kai-ku-2025-guanyin-jie-ku-2025"
+        articles={articles}
+      />
 
       {/* 返回按钮 */}
       <div className="text-center">

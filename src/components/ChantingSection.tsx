@@ -196,10 +196,10 @@ const ChantingSection = () => {
       </h2>
 
       {/* 筛选按钮 */}
-      <div className="flex justify-center gap-4 mb-8">
+      <div className="flex justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
         <button 
           onClick={() => handleSutraChange('heart')}
-          className={`px-6 py-2 rounded-full transition-colors ${
+          className={`px-3 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base rounded-full transition-colors ${
             currentSutra === 'heart' 
               ? 'bg-primary-gold text-white' 
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
@@ -209,7 +209,7 @@ const ChantingSection = () => {
         </button>
         <button 
           onClick={() => handleSutraChange('avalokitesvara')}
-          className={`px-6 py-2 rounded-full transition-colors ${
+          className={`px-3 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base rounded-full transition-colors ${
             currentSutra === 'avalokitesvara' 
               ? 'bg-primary-gold text-white' 
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
@@ -219,7 +219,7 @@ const ChantingSection = () => {
         </button>
         <button 
           onClick={() => handleSutraChange('greatCompassion')}
-          className={`px-6 py-2 rounded-full transition-colors ${
+          className={`px-3 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base rounded-full transition-colors ${
             currentSutra === 'greatCompassion' 
               ? 'bg-primary-gold text-white' 
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
@@ -229,10 +229,10 @@ const ChantingSection = () => {
         </button>
       </div>
 
-      <div className="bg-white/60 p-6 rounded-lg border border-primary-gold/20 hover:bg-white/80 transition-all duration-300">
+      <div className="bg-white/60 p-4 sm:p-6 rounded-lg border border-primary-gold/20 hover:bg-white/80 transition-all duration-300">
         {/* 经文标题和描述 */}
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-song font-bold text-dark-brown mb-2">
+        <div className="text-center mb-4 sm:mb-6">
+          <h3 className="text-xl sm:text-2xl font-song font-bold text-dark-brown mb-2">
             {sutras[currentSutra as keyof typeof sutras].title}
           </h3>
           <p className="text-gray-600 text-sm">
@@ -241,10 +241,10 @@ const ChantingSection = () => {
         </div>
 
         {/* 经文内容 - 添加固定高度和滚动 */}
-        <div className="h-[400px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-primary-gold/20 scrollbar-track-transparent hover:scrollbar-thumb-primary-gold/40">
-          <div className="space-y-6 text-lg font-song leading-loose text-dark-brown">
+        <div className="h-[400px] overflow-y-auto px-4 sm:px-2 scrollbar-thin scrollbar-thumb-primary-gold/20 scrollbar-track-transparent hover:scrollbar-thumb-primary-gold/40">
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg font-song leading-loose text-dark-brown">
             {sutras[currentSutra as keyof typeof sutras].content.map((paragraph, index) => (
-              <p key={index} className="indent-8 whitespace-pre-line">
+              <p key={index} className="indent-6 sm:indent-8 whitespace-pre-line">
                 {paragraph}
               </p>
             ))}

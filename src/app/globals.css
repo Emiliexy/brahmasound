@@ -46,11 +46,11 @@
   }
   
   .btn-primary {
-    @apply bg-primary-gold text-white px-6 py-2 rounded-md hover:bg-deep-gold transition-all duration-200;
+    @apply bg-primary-gold text-white px-6 py-3 sm:py-2 text-lg sm:text-base rounded-lg hover:bg-deep-gold transition-all duration-200;
   }
   
   .btn-secondary {
-    @apply bg-dark-brown bg-opacity-20 text-dark-brown px-6 py-2 rounded-md hover:bg-opacity-30 transition-all duration-200;
+    @apply bg-dark-brown bg-opacity-20 text-dark-brown px-6 py-3 sm:py-2 text-lg sm:text-base rounded-lg hover:bg-opacity-30 transition-all duration-200;
   }
 }
 
@@ -95,4 +95,17 @@
   .scrollbar-thin:hover::-webkit-scrollbar-thumb {
     background-color: rgba(184, 134, 11, 0.6);
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }

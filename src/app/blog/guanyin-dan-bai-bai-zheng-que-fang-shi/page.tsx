@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function GuanYinDanGuide() {
   return (
@@ -115,20 +117,11 @@ export default function GuanYinDanGuide() {
         </div>
       </section>
 
-      {/* 结语 */}
-      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
-        <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">结语：观音诞的精神与意义</h2>
-        <div className="space-y-6 text-lg leading-loose text-black font-song">
-          <p>
-            观音诞不仅是一个宗教节日，更是一种慈悲和愿力的体现。通过拜拜和祈愿，信徒们感受到观音菩萨的庇佑与大悲。同时，观音诞也提醒人们要行善积德，帮助他人，从而累积自己的福报。
-          </p>
-          <p>
-            无论是在庙宇中的盛大仪式，还是在家中的简单拜祭，观音诞的庆祝方式都表达了人们对慈悲与智慧的追求，以及愿意帮助他人、化解痛苦的精神。
-          </p>
-          <p>在观音菩萨面前，我们应该以&quot;至诚恭敬&quot;的心态来礼拜。</p>
-          <p>我们应该以&quot;清净心&quot;来礼拜观音菩萨。</p>
-        </div>
-      </section>
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/guanyin-dan-bai-bai-zheng-que-fang-shi"
+        articles={articles}
+      />
 
       {/* 返回按钮 */}
       <div className="text-center">

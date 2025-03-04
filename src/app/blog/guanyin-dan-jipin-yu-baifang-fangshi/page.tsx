@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function GuanYinDanOfferings() {
   return (
@@ -140,6 +142,12 @@ export default function GuanYinDanOfferings() {
           <p>供品的摆放应遵循&quot;清净庄严&quot;的原则。</p>
         </div>
       </section>
+
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/guanyin-dan-jipin-yu-baifang-fangshi"
+        articles={articles}
+      />
 
       {/* 返回按钮 */}
       <div className="text-center">

@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedArticles from '@/components/RelatedArticles'
+import { articles } from '@/data/articles'
 
 export default function WhoIsGuanYin() {
   return (
@@ -94,6 +96,12 @@ export default function WhoIsGuanYin() {
           </p>
         </div>
       </section>
+
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/who-is-guan-yin"
+        articles={articles}
+      />
 
       {/* 返回按钮 */}
       <div className="text-center">

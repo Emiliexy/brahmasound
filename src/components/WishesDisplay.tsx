@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, useEffect, useState } from 'react'
+import { BellIcon } from '@heroicons/react/24/outline'
 
 export interface Wish {
   text: string
@@ -21,6 +22,29 @@ const generateLianYouId = () => {
 }
 
 const WishesDisplay = ({ wishes }: WishesDisplayProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // 检测是否为移动端
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
+
+  // 自动滚动效果
+  useEffect(() => {
+    if (isMobile && wishes.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % wishes.length)
+      }, 3000)
+      return () => clearInterval(interval)
+    }
+  }, [wishes.length, isMobile])
+
   // 为每个心愿生成一个固定的莲友ID
   const wishesWithId = useMemo(() => {
     return wishes.map(wish => ({
@@ -29,6 +53,34 @@ const WishesDisplay = ({ wishes }: WishesDisplayProps) => {
     }))
   }, [wishes])
 
+  // 移动端通告栏样式
+  if (isMobile) {
+    return (
+      <div className="fixed top-16 left-0 right-0 z-40 bg-light-gold/95 backdrop-blur-sm shadow-sm border-y border-primary-gold/20">
+        {wishes.length > 0 && (
+          <div className="flex items-center px-4 py-1.5 text-burgundy overflow-hidden">
+            <BellIcon className="w-4 h-4 flex-shrink-0 mr-2 animate-bounce text-primary-gold" />
+            <div className="overflow-hidden whitespace-nowrap">
+              <div 
+                className="inline-block animate-marquee text-sm font-song"
+                style={{
+                  animation: 'marquee 20s linear infinite'
+                }}
+              >
+                {wishesWithId.map((wish, index) => (
+                  <span key={index} className="mr-8">
+                    莲友{wish.lianYouId}：{wish.text}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  // 桌面端原有样式
   return (
     <div className="w-full bg-gradient-to-br from-bg-cream/95 via-light-gold/30 to-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl mb-6 border border-primary-gold/10">
       <div className="flex items-center gap-2 mb-4">
