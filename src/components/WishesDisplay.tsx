@@ -22,7 +22,6 @@ const generateLianYouId = () => {
 }
 
 const WishesDisplay = ({ wishes }: WishesDisplayProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
   // 检测是否为移动端
@@ -34,16 +33,6 @@ const WishesDisplay = ({ wishes }: WishesDisplayProps) => {
     window.addEventListener('resize', checkIsMobile)
     return () => window.removeEventListener('resize', checkIsMobile)
   }, [])
-
-  // 自动滚动效果
-  useEffect(() => {
-    if (isMobile && wishes.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % wishes.length)
-      }, 3000)
-      return () => clearInterval(interval)
-    }
-  }, [wishes.length, isMobile])
 
   // 为每个心愿生成一个固定的莲友ID
   const wishesWithId = useMemo(() => {

@@ -79,14 +79,11 @@ export default function PrayerThanksgivingGuide() {
         </div>
       </section>
 
-      {/* 结语 */}
-      <section className="mb-12 bg-light-gold/90 backdrop-blur-sm rounded-2xl p-8 shadow-md">
-        <div className="space-y-6 text-lg leading-loose text-black font-song">
-          <h3 className="text-xl font-kai font-bold text-burgundy mb-4">虔诚祈愿，感恩回向</h3>
-          <p>向观音菩萨祈求庇佑的过程，不仅仅是为了求得外在的帮助，更是一次心灵的洗涤与升华。通过请愿文、还愿文与回向偈，信徒们将内心的愿望与感恩之情传达给菩萨，并借此与观音菩萨建立更加深厚的精神联系。观音菩萨的慈悲无量，愿她的庇佑与智慧能够帮助我们化解困境、增进福报，同时带给我们无尽的平安与宁静。</p>
-          <p>在信仰的道路上，我们通过虔诚的祈愿和回向，回报菩萨的恩德，也让自己在不断积德行善的过程中，修行得以升华。无论是求得安慰、解决问题，还是通过回向帮助众生，祈愿的真正意义在于让我们的心灵得到净化与成长。愿每一位信徒都能在观音菩萨的庇佑下，行善积德，心中常怀慈悲与感恩，走向更光明的人生之路。</p>
-        </div>
-      </section>
+      {/* 返回按钮之前添加相关文章模块 */}
+      <RelatedArticles 
+        currentArticleLink="/blog/prayer-thanksgiving-dedication-to-guanyin"
+        articles={articles}
+      />
 
       {/* 返回首页按钮 */}
       <div className="text-center">
