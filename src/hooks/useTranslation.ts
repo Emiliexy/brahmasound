@@ -1,26 +1,27 @@
-import { useContext } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
-import { Locale } from '@/i18n/config'
+import { useLocale } from '@/contexts/LocaleContext'
+import { translations } from '@/i18n/translations'
 
-interface UseTranslation {
-  t: (key: string, params?: Record<string, any>) => string;
-  locale: Locale;
-}
+type TranslationKey = keyof typeof translations['zh-CN']
+type TranslationParams = Record<string, string | number>
 
-export const useTranslation = (): UseTranslation => {
-  const { locale, translations } = useContext(LanguageContext)
+export const useTranslation = () => {
+  const { locale } = useLocale()
 
-  const t = (key: string, params?: Record<string, any>): string => {
-    let translation = translations[key] || key
+  const t = (key: TranslationKey, params?: TranslationParams): string => {
+    const translation = translations[locale]?.[key] || translations['zh-CN'][key]
+    if (!translation) return key
 
     if (params) {
-      Object.keys(params).forEach(param => {
-        translation = translation.replace(`{${param}}`, params[param])
-      })
+      return Object.entries(params).reduce(
+        (acc, [key, value]) => acc.replace(`{{${key}}}`, String(value)),
+        translation
+      )
     }
 
     return translation
   }
 
-  return { t, locale }
-} 
+  return { t }
+}
+
+export default useTranslation 

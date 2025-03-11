@@ -208,11 +208,17 @@ const schemaData: Record<string, any> = {
   }
 }
 
+interface Params {
+  locale?: string;
+}
+
+interface MetadataParams {
+  params: Params;
+}
+
 export const generateMetadata = async ({
   params: { locale = 'zh-CN' }
-}: {
-  params: { locale?: string }
-}) => {
+}: MetadataParams) => {
   return metadata[locale as keyof typeof metadata] || metadata['zh-CN']
 }
 

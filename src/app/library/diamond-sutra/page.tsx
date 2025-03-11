@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { SpeakerWaveIcon, PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
 import { BookmarkIcon, BookOpenIcon, EyeSlashIcon, EyeIcon, ArrowsUpDownIcon } from '@heroicons/react/24/outline'
+import { PauseIcon, PlayIcon } from '@heroicons/react/24/solid'
+import useTranslation from '@/hooks/useTranslation'
 
 const sutraContent = [
   { id: 'title', text: '金刚般若波罗蜜经' },
@@ -368,8 +370,8 @@ const DiamondSutraPage = () => {
       <header className="relative px-8 py-6 border-b border-primary-gold/20">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold font-song text-dark-brown">《金刚般若波罗蜜经》</h1>
-          <p className="mt-2 text-gray-600 max-w-2xl">
-            《金刚般若波罗蜜经》是佛教最重要的经典之一，阐述般若空性智慧，以'金刚'比喻其智慧锐利，能断除一切烦恼执著。
+          <p className="text-base text-gray-600 mb-4">
+            &ldquo;如是我闻，一时佛在舍卫国祇树给孤独园&rdquo;
           </p>
           
           {/* 音频控件 */}

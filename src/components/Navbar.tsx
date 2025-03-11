@@ -8,12 +8,14 @@ import LanguageSwitch from './LanguageSwitch'
 import { useTranslation } from '@/hooks/useTranslation'
 import { LanguageContext } from '@/contexts/LanguageContext'
 import toast from 'react-hot-toast'
+import { useLocale } from '@/contexts/LocaleContext'
 
 const Navbar = () => {
   const { locale, setLocale, detectionSource } = useContext(LanguageContext)
   const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasShownNotification, setHasShownNotification] = useState(false)
+  const { locale: localeContext } = useLocale()
 
   useEffect(() => {
     // 仅在首次加载时显示语言检测提示
