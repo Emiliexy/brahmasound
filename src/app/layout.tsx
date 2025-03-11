@@ -5,6 +5,9 @@ import Footer from '@/components/Footer'
 import { Toaster } from 'react-hot-toast'
 import Script from 'next/script'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { LocaleProvider } from '@/contexts/LocaleContext'
+
+type Locale = 'zh-CN' | 'zh-TW'
 
 const metadata: Record<string, Metadata> = {
   'zh-CN': {
@@ -196,7 +199,7 @@ const schemaData: Record<'zh-CN' | 'zh-TW', SchemaData> = {
       "@type": "Organization",
       "name": "BrahmaSound 梵海清音",
       "url": "https://brahmasound.com",
-      "logo": "https://brahmasound.com/images/icon/logo.png",
+      "logo": "https://brahmasound.com/images/logo.png",
       "description": "BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。",
       "sameAs": [
         "https://twitter.com/brahmasound",
@@ -222,7 +225,7 @@ const schemaData: Record<'zh-CN' | 'zh-TW', SchemaData> = {
       "@type": "Organization",
       "name": "BrahmaSound 梵海清音",
       "url": "https://brahmasound.com",
-      "logo": "https://brahmasound.com/images/icon/logo.png",
+      "logo": "https://brahmasound.com/images/logo.png",
       "description": "BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。",
       "sameAs": [
         "https://twitter.com/brahmasound",
@@ -248,23 +251,72 @@ interface RootLayoutProps {
 export const generateMetadata = async ({
   params: { locale = 'zh-CN' }
 }: MetadataParams) => {
+  const currentLocale = locale as Locale
+  const schemaData: Record<Locale, SchemaData> = {
+    'zh-CN': {
+      website: {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BrahmaSound 梵海清音",
+        "url": "https://brahmasound.com",
+        "description": "BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://brahmasound.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      organization: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BrahmaSound 梵海清音",
+        "url": "https://brahmasound.com",
+        "logo": "https://brahmasound.com/images/logo.png",
+        "description": "BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。",
+        "sameAs": [
+          "https://twitter.com/brahmasound",
+          "https://facebook.com/brahmasound"
+        ]
+      }
+    },
+    'zh-TW': {
+      website: {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BrahmaSound 梵海清音",
+        "url": "https://brahmasound.com",
+        "description": "BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://brahmasound.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      organization: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BrahmaSound 梵海清音",
+        "url": "https://brahmasound.com",
+        "logo": "https://brahmasound.com/images/logo.png",
+        "description": "BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。",
+        "sameAs": [
+          "https://twitter.com/brahmasound",
+          "https://facebook.com/brahmasound"
+        ]
+      }
+    }
+  }
+
   return {
     title: {
       template: '%s | BrahmaSound 梵海清音',
       default: 'BrahmaSound 梵海清音 - 在线礼佛·在线祈愿平台'
     },
-    description: locale === 'zh-TW' 
-      ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。'
-      : 'BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。',
-    keywords: locale === 'zh-TW'
-      ? '數位佛堂,線上禮佛,觀音菩薩,祈願,誦經,佛經'
-      : '数字佛堂,在线礼佛,观音菩萨,祈愿,诵经,佛经',
-    authors: [{ name: 'BrahmaSound Team' }],
+    description: schemaData[currentLocale].website.description,
+    keywords: ['在线礼佛', '在线祈愿', '观音菩萨', '诵经', '佛教', '数字佛堂'],
     openGraph: {
-      title: 'BrahmaSound 梵海清音',
-      description: locale === 'zh-TW'
-        ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗'
-        : 'BrahmaSound数字佛堂为您开启云端礼佛新体验',
+      title: 'BrahmaSound 梵海清音 - 在线礼佛·在线祈愿平台',
+      description: schemaData[currentLocale].website.description,
       url: 'https://brahmasound.com',
       siteName: 'BrahmaSound 梵海清音',
       images: [
@@ -275,31 +327,38 @@ export const generateMetadata = async ({
           alt: 'BrahmaSound 梵海清音'
         }
       ],
-      locale: locale,
+      locale: currentLocale,
       type: 'website'
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1
+      }
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'BrahmaSound 梵海清音',
-      description: locale === 'zh-TW'
-        ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗'
-        : 'BrahmaSound数字佛堂为您开启云端礼佛新体验',
+      title: 'BrahmaSound 梵海清音 - 在线礼佛·在线祈愿平台',
+      description: schemaData[currentLocale].website.description,
+      creator: '@brahmasound',
       images: ['https://brahmasound.com/images/twitter-image.jpg']
     },
-    icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
-      apple: '/apple-touch-icon.png'
+    verification: {
+      google: 'google-site-verification-code',
+      yandex: 'yandex-verification-code',
+      baidu: 'baidu-site-verification-code'
     },
-    manifest: '/manifest.json',
-    robots: {
-      index: true,
-      follow: true
-    },
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 1
+    alternates: {
+      canonical: 'https://brahmasound.com',
+      languages: {
+        'zh-CN': 'https://brahmasound.com/zh-CN',
+        'zh-TW': 'https://brahmasound.com/zh-TW'
+      }
     }
   }
 }
@@ -343,14 +402,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="lotus-pattern">
-        <LanguageProvider>
-          <Navbar />
-          <main className="min-h-screen px-2 sm:px-4 py-4 sm:py-8 max-w-7xl mx-auto">
-            {children}
-          </main>
-          <Footer />
-          <Toaster position="top-center" />
-        </LanguageProvider>
+        <LocaleProvider>
+          <LanguageProvider>
+            <Navbar />
+            <main className="min-h-screen px-2 sm:px-4 py-4 sm:py-8 max-w-7xl mx-auto">
+              {children}
+            </main>
+            <Footer />
+            <Toaster position="top-center" />
+          </LanguageProvider>
+        </LocaleProvider>
       </body>
     </html>
   )

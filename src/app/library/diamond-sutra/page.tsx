@@ -2,8 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
-import { BookmarkIcon, BookOpenIcon, EyeSlashIcon, EyeIcon, ArrowsUpDownIcon } from '@heroicons/react/24/outline'
-import { PauseIcon, PlayIcon } from '@heroicons/react/24/solid'
 import useTranslation from '@/hooks/useTranslation'
 
 const sutraContent = [

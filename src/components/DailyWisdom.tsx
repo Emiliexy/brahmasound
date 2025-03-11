@@ -129,15 +129,19 @@ const getDailyIndex = () => {
 
 const DailyWisdom = () => {
   const { t, locale } = useTranslation()
-  const [wisdom, setWisdom] = useState<WisdomQuote>(wisdomQuotes[locale][0])
+  const [wisdom, setWisdom] = useState<WisdomQuote | null>(null)
   const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     const index = getDailyIndex()
-    setWisdom(wisdomQuotes[locale][index])
+    if (wisdomQuotes[locale]) {
+      setWisdom(wisdomQuotes[locale][index])
+    }
   }, [locale])
 
   const handleShare = async () => {
+    if (!wisdom) return
+
     try {
       if (navigator.share) {
         await navigator.share({
@@ -148,7 +152,7 @@ const DailyWisdom = () => {
       } else {
         // 如果不支持原生分享API，复制到剪贴板
         await navigator.clipboard.writeText(`${wisdom.text} —— ${wisdom.source}`)
-        toast.success(t('wisdom.copied'), {
+        toast.success(t('daily-wisdom.copied'), {
           style: {
             background: 'rgba(255, 248, 220, 0.95)',
             color: '#5D3A1A',
@@ -159,6 +163,10 @@ const DailyWisdom = () => {
     } catch (error) {
       console.error('分享失败:', error)
     }
+  }
+
+  if (!wisdom) {
+    return null // 或者返回一个加载状态
   }
 
   return (
@@ -177,7 +185,7 @@ const DailyWisdom = () => {
         <button 
           onClick={handleShare}
           className="p-2 rounded-full hover:bg-primary-gold/10 transition-colors duration-200"
-          aria-label={t('wisdom.share')}
+          aria-label={t('daily-wisdom.share')}
         >
           <ShareIcon className="w-5 h-5 text-primary-gold" />
         </button>

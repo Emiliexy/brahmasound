@@ -1,11 +1,13 @@
-import { useLocale } from '@/contexts/LocaleContext'
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
 import { translations } from '@/i18n/translations'
+import { Locale } from '@/i18n/config'
 
 type TranslationKey = keyof typeof translations['zh-CN']
 type TranslationParams = Record<string, string | number>
 
 export const useTranslation = () => {
-  const { locale } = useLocale()
+  const { locale } = useContext(LanguageContext)
 
   const t = (key: TranslationKey, params?: TranslationParams): string => {
     const translation = translations[locale]?.[key] || translations['zh-CN'][key]
@@ -21,7 +23,7 @@ export const useTranslation = () => {
     return translation
   }
 
-  return { t }
+  return { t, locale }
 }
 
 export default useTranslation 
