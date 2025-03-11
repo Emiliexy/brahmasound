@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
 
