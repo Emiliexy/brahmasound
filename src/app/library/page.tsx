@@ -1,9 +1,5 @@
 'use client'
 
-import { BookOpenIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import Image from 'next/image'
-import SearchBar from '@/components/library/SearchBar'
 import useTranslation from '@/hooks/useTranslation'
 import { CategoryFilter } from '@/components/library/CategoryFilter'
 import RecommendedSutras from '@/components/library/RecommendedSutras'

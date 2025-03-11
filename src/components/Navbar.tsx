@@ -11,7 +11,7 @@ import toast from 'react-hot-toast'
 import { useLocale } from '@/contexts/LocaleContext'
 
 const Navbar = () => {
-  const { locale, setLocale, detectionSource } = useContext(LanguageContext)
+  const { locale, detectionSource } = useContext(LanguageContext)
   const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasShownNotification, setHasShownNotification] = useState(false)

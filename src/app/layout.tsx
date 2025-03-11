@@ -153,7 +153,31 @@ const metadata: Record<string, Metadata> = {
   }
 }
 
-const schemaData: Record<string, any> = {
+interface SchemaData {
+  website: {
+    "@context": string;
+    "@type": string;
+    name: string;
+    url: string;
+    description: string;
+    potentialAction: {
+      "@type": string;
+      target: string;
+      "query-input": string;
+    };
+  };
+  organization: {
+    "@context": string;
+    "@type": string;
+    name: string;
+    url: string;
+    logo: string;
+    description: string;
+    sameAs: string[];
+  };
+}
+
+const schemaData: Record<'zh-CN' | 'zh-TW', SchemaData> = {
   'zh-CN': {
     website: {
       "@context": "https://schema.org",
@@ -216,19 +240,74 @@ interface MetadataParams {
   params: Params;
 }
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params?: Params;
+}
+
 export const generateMetadata = async ({
   params: { locale = 'zh-CN' }
 }: MetadataParams) => {
-  return metadata[locale as keyof typeof metadata] || metadata['zh-CN']
+  return {
+    title: {
+      template: '%s | BrahmaSound 梵海清音',
+      default: 'BrahmaSound 梵海清音 - 在线礼佛·在线祈愿平台'
+    },
+    description: locale === 'zh-TW' 
+      ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。'
+      : 'BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。',
+    keywords: locale === 'zh-TW'
+      ? '數位佛堂,線上禮佛,觀音菩薩,祈願,誦經,佛經'
+      : '数字佛堂,在线礼佛,观音菩萨,祈愿,诵经,佛经',
+    authors: [{ name: 'BrahmaSound Team' }],
+    openGraph: {
+      title: 'BrahmaSound 梵海清音',
+      description: locale === 'zh-TW'
+        ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗'
+        : 'BrahmaSound数字佛堂为您开启云端礼佛新体验',
+      url: 'https://brahmasound.com',
+      siteName: 'BrahmaSound 梵海清音',
+      images: [
+        {
+          url: 'https://brahmasound.com/images/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'BrahmaSound 梵海清音'
+        }
+      ],
+      locale: locale,
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'BrahmaSound 梵海清音',
+      description: locale === 'zh-TW'
+        ? 'BrahmaSound數位佛堂為您開啟雲端禮佛新體驗'
+        : 'BrahmaSound数字佛堂为您开启云端礼佛新体验',
+      images: ['https://brahmasound.com/images/twitter-image.jpg']
+    },
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon-16x16.png',
+      apple: '/apple-touch-icon.png'
+    },
+    manifest: '/manifest.json',
+    robots: {
+      index: true,
+      follow: true
+    },
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+      maximumScale: 1
+    }
+  }
 }
 
 export default function RootLayout({
   children,
   params = { locale: 'zh-CN' }
-}: {
-  children: React.ReactNode
-  params?: { locale?: string }
-}) {
+}: RootLayoutProps) {
   const locale = params.locale as keyof typeof schemaData || 'zh-CN'
   const schema = schemaData[locale]
 
@@ -248,7 +327,9 @@ export default function RootLayout({
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(...args: unknown[]): void {
+              dataLayer.push(arguments);
+            }
             gtag('js', new Date());
 
             gtag('config', 'G-TMDX45V18R');
