@@ -49,13 +49,19 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 经书相关
     'sutra.heart': '般若波罗蜜多心经',
-    'sutra.heart.description': '佛教最简短而精华的经典，阐述"色即是空，空即是色"的智慧',
+    'sutra.heart.description': '佛教最精简、最重要的经典之一，阐述"色即是空，空即是色"的般若智慧',
+    'sutra.heart.short': '心经',
+    'sutra.heart.full': '般若波罗蜜多心经',
     'sutra.diamond': '金刚般若波罗蜜经',
     'sutra.diamond.description': '禅宗六祖惠能闻一句而开悟的经典，讲述"应无所住而生其心"的真谛',
     'sutra.amitabha': '阿弥陀经',
     'sutra.amitabha.description': '净土宗的根本经典，介绍西方极乐世界和念佛往生的法门',
-    'sutra.compassion': '大悲咒',
-    'sutra.compassion.description': '观世音菩萨的根本咒语，具有不可思议的加持力量',
+    'sutra.avalokitesvara.short': '普门品',
+    'sutra.avalokitesvara.full': '妙法莲华经 · 观世音菩萨普门品',
+    'sutra.avalokitesvara.description': '阐述大慈大悲观世音菩萨的救苦救难本愿力',
+    'sutra.great-compassion.short': '大悲咒',
+    'sutra.great-compassion.full': '千手千眼观世音菩萨广大圆满无碍大悲心陀罗尼',
+    'sutra.great-compassion.description': '千手千眼观世音菩萨的心咒，具有不可思议的加持力',
     'sutra.category.wisdom': '智慧开悟',
     'sutra.category.blessing': '祈福',
     'sutra.category.purification': '消业',
@@ -66,6 +72,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sutra.show-explanation': '显示释义',
     'sutra.hide-explanation': '隐藏释义',
     'sutra.duration': '时长',
+    'chanting.title': '诵经念佛',
 
     // 通用
     'common.loading': '加载中...',
@@ -123,18 +130,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     'worship.error.sensitive-words': '请文明祈愿，不要包含不当词汇',
     'worship.error.empty-wish': '请先填写祈愿',
     'worship.error.sensitive-content': '祈愿内容包含不当词汇，请修改后重试',
-
-    // 诵经组件
-    'chanting.title': '诵经念佛',
-    'sutra.heart.short': '心经',
-    'sutra.avalokitesvara.short': '普门品',
-    'sutra.great-compassion.short': '大悲咒',
-    'sutra.heart.full': '般若波罗蜜多心经',
-    'sutra.heart.description': '佛教最精简、最重要的经典之一，阐述"色即是空，空即是色"的般若智慧',
-    'sutra.avalokitesvara.full': '妙法莲华经 · 观世音菩萨普门品',
-    'sutra.avalokitesvara.description': '阐述大慈大悲观世音菩萨的救苦救难本愿力',
-    'sutra.great-compassion.full': '千手千眼观世音菩萨广大圆满无碍大悲心陀罗尼',
-    'sutra.great-compassion.description': '千手千眼观世音菩萨的心咒，具有不可思议的加持力',
   },
   'zh-TW': {
     // 導航
@@ -184,13 +179,19 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 經書相關
     'sutra.heart': '般若波羅蜜多心經',
-    'sutra.heart.description': '佛教最簡短而精華的經典，闡述"色即是空，空即是色"的智慧',
+    'sutra.heart.description': '佛教最精簡、最重要的經典之一，闡述"色即是空，空即是色"的般若智慧',
+    'sutra.heart.short': '心經',
+    'sutra.heart.full': '般若波羅蜜多心經',
     'sutra.diamond': '金剛般若波羅蜜經',
     'sutra.diamond.description': '禪宗六祖慧能聞一句而開悟的經典，講述"應無所住而生其心"的真諦',
     'sutra.amitabha': '阿彌陀經',
     'sutra.amitabha.description': '淨土宗的根本經典，介紹西方極樂世界和念佛往生的法門',
-    'sutra.compassion': '大悲咒',
-    'sutra.compassion.description': '觀世音菩薩的根本咒語，具有不可思議的加持力量',
+    'sutra.avalokitesvara.short': '普門品',
+    'sutra.avalokitesvara.full': '妙法蓮華經 · 觀世音菩薩普門品',
+    'sutra.avalokitesvara.description': '闡述大慈大悲觀世音菩薩的救苦救難本願力',
+    'sutra.great-compassion.short': '大悲咒',
+    'sutra.great-compassion.full': '千手千眼觀世音菩薩廣大圓滿無礙大悲心陀羅尼',
+    'sutra.great-compassion.description': '千手千眼觀世音菩薩的心咒，具有不可思議的加持力',
     'sutra.category.wisdom': '智慧開悟',
     'sutra.category.blessing': '祈福',
     'sutra.category.purification': '消業',
@@ -201,6 +202,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sutra.show-explanation': '顯示釋義',
     'sutra.hide-explanation': '隱藏釋義',
     'sutra.duration': '時長',
+    'chanting.title': '誦經念佛',
 
     // 通用
     'common.loading': '加載中...',
@@ -258,17 +260,5 @@ export const translations: Record<Locale, Record<string, string>> = {
     'worship.error.sensitive-words': '請文明祈願，不要包含不當詞彙',
     'worship.error.empty-wish': '請先填寫祈願',
     'worship.error.sensitive-content': '祈願內容包含不當詞彙，請修改後重試',
-
-    // 诵经组件
-    'chanting.title': '誦經念佛',
-    'sutra.heart.short': '心經',
-    'sutra.avalokitesvara.short': '普門品',
-    'sutra.great-compassion.short': '大悲咒',
-    'sutra.heart.full': '般若波羅蜜多心經',
-    'sutra.heart.description': '佛教最精簡、最重要的經典之一，闡述"色即是空，空即是色"的般若智慧',
-    'sutra.avalokitesvara.full': '妙法蓮華經 · 觀世音菩薩普門品',
-    'sutra.avalokitesvara.description': '闡述大慈大悲觀世音菩薩的救苦救難本願力',
-    'sutra.great-compassion.full': '千手千眼觀世音菩薩廣大圓滿無礙大悲心陀羅尼',
-    'sutra.great-compassion.description': '千手千眼觀世音菩薩的心咒，具有不可思議的加持力',
   }
 } 
