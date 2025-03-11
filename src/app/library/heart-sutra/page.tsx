@@ -199,7 +199,7 @@ const HeartSutraPage = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold font-song text-dark-brown">《心经》</h1>
           <p className="mt-2 text-gray-600 max-w-2xl">
-            《心经》是佛教最重要的经典之一，全文260字，深入探讨"空性"智慧，被誉为'诸佛母'。
+            《心经》是佛教最重要的经典之一，全文260字，深入探讨&quot;空性&quot;智慧，被誉为&apos;诸佛母&apos;。
           </p>
           
           {/* 音频控件 */}
