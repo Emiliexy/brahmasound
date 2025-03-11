@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { SpeakerWaveIcon, PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
+import { PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const sutraContent = [
   { id: 'title', text: '般若波罗蜜多心经' },

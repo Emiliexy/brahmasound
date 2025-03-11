@@ -10,7 +10,7 @@ export const useTranslation = () => {
   const { locale } = useContext(LanguageContext)
 
   const t = (key: TranslationKey, params?: TranslationParams): string => {
-    const translation = translations[locale]?.[key] || translations['zh-CN'][key]
+    const translation = translations[locale as Locale]?.[key] || translations['zh-CN'][key]
     if (!translation) return key
 
     if (params) {

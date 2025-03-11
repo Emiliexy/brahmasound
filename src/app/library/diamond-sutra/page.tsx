@@ -1,8 +1,9 @@
 'use client'
 
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { PauseCircleIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
-import useTranslation from '@/hooks/useTranslation'
 
 const sutraContent = [
   { id: 'title', text: '金刚般若波罗蜜经' },
