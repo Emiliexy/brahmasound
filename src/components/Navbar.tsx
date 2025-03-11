@@ -2,11 +2,52 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import LanguageSwitch from './LanguageSwitch'
+import { useTranslation } from '@/hooks/useTranslation'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import toast from 'react-hot-toast'
 
 const Navbar = () => {
+  const { locale, setLocale, detectionSource } = useContext(LanguageContext)
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hasShownNotification, setHasShownNotification] = useState(false)
+
+  useEffect(() => {
+    // 仅在首次加载时显示语言检测提示
+    if (!hasShownNotification && detectionSource !== 'localStorage') {
+      const savedLocale = localStorage.getItem('detected_locale_notified')
+      if (!savedLocale) {
+        // 根据检测来源显示不同的提示
+        let message = ''
+        let icon = '🌏'
+        
+        switch (detectionSource) {
+          case 'browser':
+            message = t('language.browser-detected')
+            icon = '🌐'
+            break
+          case 'ip':
+            message = t('language.auto-detected')
+            icon = '📍'
+            break
+          default:
+            message = t('language.switch-success')
+            icon = '🌏'
+        }
+
+        toast.success(message, {
+          duration: 3000,
+          icon
+        })
+        
+        localStorage.setItem('detected_locale_notified', 'true')
+      }
+      setHasShownNotification(true)
+    }
+  }, [locale, hasShownNotification, detectionSource, t])
 
   return (
     <nav className="bg-burgundy/90 shadow-md sticky top-0 z-50 backdrop-blur-sm">
@@ -28,13 +69,16 @@ const Navbar = () => {
                 <span className="text-lg sm:text-xl font-kai font-bold text-scroll-gold/90">
                   Brahmasound 梵海清音
                 </span>
-                <span className="text-sm sm:text-base text-light-gold/80">在线礼佛平台</span>
+                <span className="text-sm sm:text-base text-light-gold/80">
+                  {t('nav.platform')}
+                </span>
               </div>
             </Link>
           </div>
 
           {/* 移动端菜单按钮 */}
           <div className="flex items-center sm:hidden">
+            <LanguageSwitch />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-light-gold hover:text-primary-gold p-2"
@@ -50,17 +94,21 @@ const Navbar = () => {
           {/* 桌面端导航菜单 */}
           <div className="hidden sm:flex items-center space-x-4">
             <Link href="/" className="nav-link text-light-gold hover:text-primary-gold">
-              首页
+              {t('nav.home')}
             </Link>
             <Link href="#worship" className="nav-link text-light-gold hover:text-primary-gold">
-              礼拜观音
+              {t('nav.worship')}
             </Link>
             <Link href="#chanting" className="nav-link text-light-gold hover:text-primary-gold">
-              诵经念佛
+              {t('nav.chanting')}
+            </Link>
+            <Link href="/library" className="nav-link text-light-gold hover:text-primary-gold">
+              {t('library.title')}
             </Link>
             <Link href="#practice" className="nav-link text-light-gold hover:text-primary-gold">
-              佛法修行
+              {t('nav.practice')}
             </Link>
+            <LanguageSwitch />
           </div>
         </div>
       </div>
@@ -73,28 +121,35 @@ const Navbar = () => {
             className="block px-3 py-2 text-light-gold hover:text-primary-gold font-kai"
             onClick={() => setIsMenuOpen(false)}
           >
-            首页
+            {t('nav.home')}
           </Link>
           <Link 
             href="#worship" 
             className="block px-3 py-2 text-light-gold hover:text-primary-gold font-kai"
             onClick={() => setIsMenuOpen(false)}
           >
-            礼拜观音
+            {t('nav.worship')}
           </Link>
           <Link 
             href="#chanting" 
             className="block px-3 py-2 text-light-gold hover:text-primary-gold font-kai"
             onClick={() => setIsMenuOpen(false)}
           >
-            诵经念佛
+            {t('nav.chanting')}
+          </Link>
+          <Link 
+            href="/library" 
+            className="block px-3 py-2 text-light-gold hover:text-primary-gold font-kai"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {t('library.title')}
           </Link>
           <Link 
             href="#practice" 
             className="block px-3 py-2 text-light-gold hover:text-primary-gold font-kai"
             onClick={() => setIsMenuOpen(false)}
           >
-            佛法修行
+            {t('nav.practice')}
           </Link>
         </div>
       </div>

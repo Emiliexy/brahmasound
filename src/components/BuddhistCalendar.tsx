@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { CalendarIcon, BellIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { Lunar, Solar } from 'lunar-typescript'
+import { useTranslation } from '@/hooks/useTranslation'
 
 // 佛历年份计算（以公元前543年为起点）
 const getBuddhistYear = (date: Date) => {
@@ -27,7 +28,7 @@ const getDaysUntilGuanYinBirthday = () => {
   const daysUntil = Math.ceil(festival.getJulianDay() - today.getJulianDay())
   
   return {
-    name: '观音菩萨圣诞',
+    name: 'calendar.guanyin-birthday',
     daysUntil,
     date: festival.toYmd()
   }
@@ -42,6 +43,7 @@ const BuddhistCalendar = () => {
     date: string;
   } | null>(null)
   
+  const { t } = useTranslation()
   const buddhistYear = getBuddhistYear(currentDate)
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const BuddhistCalendar = () => {
 
   // 获取农历日期
   const lunar = Lunar.fromDate(currentDate)
-  const lunarDate = `农历${lunar.getMonthInChinese()}月${lunar.getDayInChinese()}`
+  const lunarDate = `${t('calendar.lunar')}${lunar.getMonthInChinese()}${t('calendar.month')}${lunar.getDayInChinese()}`
 
   return (
     <div 
@@ -70,7 +72,7 @@ const BuddhistCalendar = () => {
           />
         </div>
         <h2 className="text-2xl font-kai font-bold text-burgundy">
-          佛历
+          {t('calendar.title')}
         </h2>
       </div>
 
@@ -79,12 +81,12 @@ const BuddhistCalendar = () => {
         <div className="flex items-center gap-2 mb-1">
           <CalendarIcon className="w-5 h-5 text-primary-gold" />
           <span className="text-lg font-kai text-dark-brown">
-            佛历 {buddhistYear} 年
+            {t('calendar.title')} {buddhistYear}
           </span>
         </div>
         <div className="space-y-0.5">
           <p className="text-sm text-gray-600">
-            公历 {currentDate.getFullYear()} 年 {currentDate.getMonth() + 1} 月 {currentDate.getDate()} 日
+            {currentDate.getFullYear()} {t('calendar.year')} {currentDate.getMonth() + 1} {t('calendar.month')} {currentDate.getDate()} {t('calendar.day')}
           </p>
           <p className="text-sm text-gray-600">
             {lunarDate}
@@ -100,15 +102,15 @@ const BuddhistCalendar = () => {
           <div className="flex items-center gap-2">
             <BellIcon className="w-5 h-5 text-burgundy" />
             <span className="text-burgundy font-kai">
-              节日提醒
+              {t('calendar.festival-reminder')}
             </span>
           </div>
           <div className="space-y-0.5 mt-1">
             <p className="text-sm text-gray-700">
-              {upcomingFestival.name}将在 {upcomingFestival.daysUntil} 天后到来
+              {t(upcomingFestival.name)}{t('calendar.days-away', { days: upcomingFestival.daysUntil })}
             </p>
             <p className="text-xs text-gray-500">
-              农历二月十九日（{upcomingFestival.date}）
+              {t('calendar.lunar')}二月十九（{upcomingFestival.date}）
             </p>
           </div>
         </div>

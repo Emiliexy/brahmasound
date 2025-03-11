@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useState, useRef } from 'react'
 import { toast } from 'react-hot-toast'
 import type { Wish } from './WishesDisplay'
+import { useTranslation } from '@/hooks/useTranslation'
 
 // 敏感词列表
 const sensitiveWords = [
@@ -54,11 +55,12 @@ interface WorshipSectionProps {
 }
 
 const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
+  const { t } = useTranslation()
   const [wishText, setWishText] = useState('')
   const [isGlowing, setIsGlowing] = useState(false)
   const [pressProgress, setPressProgress] = useState(0)
-  const [buttonText1, setButtonText1] = useState('祈愿行拜礼')
-  const [buttonText2, setButtonText2] = useState('直接行拜礼')
+  const [buttonText1, setButtonText1] = useState(t('worship.wish-button'))
+  const [buttonText2, setButtonText2] = useState(t('worship.direct-button'))
   const pressTimer = useRef<NodeJS.Timeout | null>(null)
   const progressInterval = useRef<NodeJS.Timeout | null>(null)
   const maxLength = 50
@@ -68,7 +70,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
     if (text.length <= maxLength) {
       // 检查是否包含敏感词
       if (containsSensitiveWords(text)) {
-        toast.error('请文明祈愿，不要包含不当词汇', {
+        toast.error(t('worship.error.sensitive-words'), {
           duration: 3000,
           ...errorToastStyle,
         })
@@ -81,7 +83,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
   const startPress = (isWishButton: boolean) => {
     if (isWishButton) {
       if (!wishText.trim()) {
-        toast.error('请先填写祈愿', {
+        toast.error(t('worship.error.empty-wish'), {
           duration: 3000,
           ...errorToastStyle,
         })
@@ -90,7 +92,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
 
       // 再次检查敏感词
       if (containsSensitiveWords(wishText)) {
-        toast.error('祈愿内容包含不当词汇，请修改后重试', {
+        toast.error(t('worship.error.sensitive-content'), {
           duration: 3000,
           ...errorToastStyle,
         })
@@ -98,7 +100,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
       }
     }
 
-    toast('请长按5秒完成礼佛', {
+    toast(t('worship.press-instruction'), {
       duration: 3000,
       ...toastStyle,
     })
@@ -113,9 +115,9 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
     // 0.5秒后更改按钮文字
     setTimeout(() => {
       if (isWishButton) {
-        setButtonText1('请默念：南无大慈大悲观世音菩萨')
+        setButtonText1(t('worship.press-text'))
       } else {
-        setButtonText2('请默念：南无大慈大悲观世音菩萨')
+        setButtonText2(t('worship.press-text'))
       }
     }, INITIAL_MESSAGE_DELAY)
 
@@ -131,8 +133,8 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
     if (progressInterval.current) clearInterval(progressInterval.current)
 
     // 重置按钮文字和进度
-    setButtonText1('祈愿行拜礼')
-    setButtonText2('直接行拜礼')
+    setButtonText1(t('worship.wish-button'))
+    setButtonText2(t('worship.direct-button'))
     setPressProgress(0)
 
     // 如果是祈愿按钮，提交心愿
@@ -145,7 +147,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
     }
 
     // 显示完成提示
-    toast.success('祈愿完成，愿菩萨保佑🙏！', {
+    toast.success(t('worship.complete'), {
       duration: 4000,
       ...toastStyle,
       style: {
@@ -163,20 +165,20 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
   const cancelPress = () => {
     if (pressTimer.current) clearTimeout(pressTimer.current)
     if (progressInterval.current) clearInterval(progressInterval.current)
-    setButtonText1('祈愿行拜礼')
-    setButtonText2('直接行拜礼')
+    setButtonText1(t('worship.wish-button'))
+    setButtonText2(t('worship.direct-button'))
     setPressProgress(0)
   }
 
   return (
     <div className="max-w-4xl mx-auto bg-gradient-to-br from-bg-cream/95 via-light-gold/30 to-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-primary-gold/10">
-      <h2 className="text-3xl font-kai font-bold mb-8 text-burgundy">礼拜观音</h2>
+      <h2 className="text-3xl font-kai font-bold mb-8 text-burgundy">{t('worship.title')}</h2>
       
       {/* 观音图片 */}
       <div className={`relative w-full aspect-video mb-8 rounded-lg overflow-hidden transition-all duration-1000 ${isGlowing ? 'ring-8 ring-primary-gold/50 shadow-2xl shadow-primary-gold/30' : ''}`}>
         <Image
           src="/images/libaiguanyin/guanyin.JPG"
-          alt="观世音菩萨圣像"
+          alt={t('worship.image-alt')}
           fill
           className={`object-cover transition-all duration-1000 ${isGlowing ? 'brightness-125 contrast-125' : ''}`}
           priority
@@ -191,7 +193,7 @@ const WorshipSection = ({ onWishComplete }: WorshipSectionProps) => {
             onChange={handleWishChange}
             maxLength={maxLength}
             className="w-full h-24 p-4 rounded-lg bg-white/60 border-2 border-dark-brown/30 focus:border-primary-gold focus:outline-none resize-none hover:bg-white/80 transition-all duration-300"
-            placeholder="南无大慈大悲观世音菩萨，弟子在此虔诚祈愿..."
+            placeholder={t('worship.wish-placeholder')}
           />
           <div className="absolute bottom-2 right-2 text-sm text-gray-500">
             {wishText.length}/{maxLength}

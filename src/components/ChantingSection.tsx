@@ -1,12 +1,13 @@
 'use client'
 
+import { useTranslation } from '@/hooks/useTranslation'
 import { PlayCircleIcon, PauseCircleIcon } from '@heroicons/react/24/solid'
 import { useState, useRef, useEffect } from 'react'
 
 const sutras = {
   'heart': {
-    title: '般若波罗蜜多心经',
-    description: '佛教最精简、最重要的经典之一，阐述"色即是空，空即是色"的般若智慧',
+    titleKey: 'sutra.heart.full',
+    descriptionKey: 'sutra.heart.description',
     content: [
       '般若波罗蜜多心经',
       '观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。',
@@ -22,8 +23,8 @@ const sutras = {
     duration: '03:44'
   },
   'avalokitesvara': {
-    title: '妙法莲华经 · 观世音菩萨普门品',
-    description: '阐述大慈大悲观世音菩萨的救苦救难本愿力',
+    titleKey: 'sutra.avalokitesvara.full',
+    descriptionKey: 'sutra.avalokitesvara.description',
     content: [
       '尔时，无尽意菩萨即从座起，偏袒右肩，合掌向佛，而作是言："世尊，观世音菩萨以何因缘，名观世音？"',
       '佛告无尽意菩萨："善男子，若有无量百千万亿众生，受诸苦恼，闻是观世音菩萨，一心称名，观世音菩萨即时观其音声，皆得解脱。',
@@ -70,8 +71,8 @@ const sutras = {
     duration: '12:30'
   },
   'greatCompassion': {
-    title: '千手千眼观世音菩萨广大圆满无碍大悲心陀罗尼',
-    description: '千手千眼观世音菩萨的心咒，具有不可思议的加持力',
+    titleKey: 'sutra.great-compassion.full',
+    descriptionKey: 'sutra.great-compassion.description',
     content: [
       '南无、喝啰怛那、哆啰夜耶，南无、阿唎耶，婆卢羯帝、烁钵啰耶，菩提萨埵婆耶，摩诃萨埵婆耶，摩诃、迦卢尼迦耶，唵，萨皤啰罚曳，数怛那怛写，南无、悉吉栗埵、伊蒙阿唎耶，婆卢吉帝、室佛啰楞驮婆，南无、那啰谨墀，醯利摩诃、皤哆沙咩，萨婆阿他、豆输朋，阿逝孕，萨婆萨哆、那摩婆萨哆，那摩婆伽，摩罚特豆。',
       '怛侄他。唵，阿婆卢醯。卢迦帝。迦罗帝。夷醯唎。摩诃菩提萨埵，萨婆萨婆。摩啰摩啰，摩醯摩醯、唎驮孕。俱卢俱卢、羯蒙。度卢度卢、罚阇耶帝。摩诃罚阇耶帝。陀啰陀啰。地唎尼。室佛啰耶。遮啰遮啰。摩么罚摩啰。穆帝隶。伊醯伊醯。室那室那。阿啰参、佛啰舍利。罚沙罚参。佛啰舍耶。呼嚧呼嚧摩啰。呼嚧呼嚧醯利。娑啰娑啰，悉唎悉唎。苏嚧苏嚧。',
@@ -89,6 +90,7 @@ const sutras = {
 }
 
 const ChantingSection = () => {
+  const { t } = useTranslation()
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentSutra, setCurrentSutra] = useState('heart')
   const [progress, setProgress] = useState(0)
@@ -192,7 +194,7 @@ const ChantingSection = () => {
   return (
     <div className="max-w-4xl mx-auto bg-gradient-to-br from-bg-cream/95 via-light-gold/30 to-bg-cream/95 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-primary-gold/10">
       <h2 className="text-3xl font-kai font-bold text-burgundy mb-8">
-        诵经念佛
+        {t('chanting.title')}
       </h2>
 
       {/* 筛选按钮 */}
@@ -205,7 +207,7 @@ const ChantingSection = () => {
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
           }`}
         >
-          心经
+          {t('sutra.heart.short')}
         </button>
         <button 
           onClick={() => handleSutraChange('avalokitesvara')}
@@ -215,7 +217,7 @@ const ChantingSection = () => {
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
           }`}
         >
-          普门品
+          {t('sutra.avalokitesvara.short')}
         </button>
         <button 
           onClick={() => handleSutraChange('greatCompassion')}
@@ -225,7 +227,7 @@ const ChantingSection = () => {
               : 'bg-white/60 text-dark-brown hover:bg-white/80'
           }`}
         >
-          大悲咒
+          {t('sutra.great-compassion.short')}
         </button>
       </div>
 
@@ -233,10 +235,10 @@ const ChantingSection = () => {
         {/* 经文标题和描述 */}
         <div className="text-center mb-4 sm:mb-6">
           <h3 className="text-xl sm:text-2xl font-song font-bold text-dark-brown mb-2">
-            {sutras[currentSutra as keyof typeof sutras].title}
+            {t(sutras[currentSutra as keyof typeof sutras].titleKey)}
           </h3>
           <p className="text-gray-600 text-sm">
-            {sutras[currentSutra as keyof typeof sutras].description}
+            {t(sutras[currentSutra as keyof typeof sutras].descriptionKey)}
           </p>
         </div>
 
