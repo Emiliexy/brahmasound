@@ -1,0 +1,66 @@
+{
+  "name": "BrahmaSound 梵海清音",
+  "short_name": "BrahmaSound",
+  "description": {
+    "zh-CN": "BrahmaSound数字佛堂为您开启云端礼佛新体验。在线供奉观音菩萨，即时祈愿诵经，提供经典诵读。",
+    "zh-TW": "BrahmaSound數位佛堂為您開啟雲端禮佛新體驗。線上供奉觀音菩薩，即時祈願誦經，提供經典誦讀。"
+  },
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#B8860B",
+  "icons": [
+    {
+      "src": "/images/icon/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": ["lifestyle", "education"],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/home-zh-cn.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "主页截图"
+    },
+    {
+      "src": "/images/screenshots/home-zh-tw.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "首頁截圖"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": {
+        "zh-CN": "诵经念佛",
+        "zh-TW": "誦經念佛"
+      },
+      "url": "/#chanting",
+      "icons": [{ "src": "/images/icon/chanting.png", "sizes": "96x96" }]
+    },
+    {
+      "name": {
+        "zh-CN": "在线礼佛",
+        "zh-TW": "線上禮佛"
+      },
+      "url": "/#worship",
+      "icons": [{ "src": "/images/icon/worship.png", "sizes": "96x96" }]
+    }
+  ]
+} 
