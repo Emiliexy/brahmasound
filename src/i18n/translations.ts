@@ -11,13 +11,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 藏经阁
     'library.title': '藏经阁',
-    'library.subtitle': '探索佛法智慧，寻找心灵归宿',
-    'library.search.placeholder': '搜索经文、关键字、主题...',
-    'library.recommended': '推荐经书',
+    'library.subtitle': '在此您可以阅读和聆听佛教经典，感受佛法的智慧与慈悲',
+    'library.search.placeholder': '搜索经文、关键词...',
+    'library.recommended': '推荐经典',
     'library.recent': '最近阅读',
     'library.no-records': '暂无阅读记录',
-    'library.search': '搜索',
-    'library.suggestions': '建议搜索',
+    'library.suggestions': '热门搜索',
 
     // 心愿展示台
     'wishes.title': '心愿展示台',
@@ -49,19 +48,22 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 经书相关
     'sutra.heart': '般若波罗蜜多心经',
-    'sutra.heart.description': '佛教最精简、最重要的经典之一，阐述"色即是空，空即是色"的般若智慧',
+    'sutra.heart.description': '佛教最简短而精华的经典，阐述"色即是空，空即是色"的般若智慧',
     'sutra.heart.short': '心经',
     'sutra.heart.full': '般若波罗蜜多心经',
     'sutra.diamond': '金刚般若波罗蜜经',
-    'sutra.diamond.description': '禅宗六祖惠能闻一句而开悟的经典，讲述"应无所住而生其心"的真谛',
+    'sutra.diamond.description': '阐述"应无所住而生其心"的般若系重要经典',
     'sutra.amitabha': '阿弥陀经',
     'sutra.amitabha.description': '净土宗的根本经典，介绍西方极乐世界和念佛往生的法门',
-    'sutra.avalokitesvara.short': '普门品',
+    'sutra.avalokitesvara.short': '观音经',
     'sutra.avalokitesvara.full': '妙法莲华经 · 观世音菩萨普门品',
     'sutra.avalokitesvara.description': '阐述大慈大悲观世音菩萨的救苦救难本愿力',
     'sutra.great-compassion.short': '大悲咒',
     'sutra.great-compassion.full': '千手千眼观世音菩萨广大圆满无碍大悲心陀罗尼',
     'sutra.great-compassion.description': '千手千眼观世音菩萨的心咒，具有不可思议的加持力',
+    'sutra.medicine': '药师琉璃光如来本愿功德经',
+    'sutra.medicine.description': '阐述药师佛十二大愿，消除疾病与灾难的殊胜经典',
+    'sutra.compassion': '大悲心陀罗尼经',
     'sutra.category.wisdom': '智慧开悟',
     'sutra.category.blessing': '祈福',
     'sutra.category.purification': '消业',
@@ -86,18 +88,18 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 分类筛选
     'filter.purpose': '修行目的',
-    'filter.purpose.wisdom': '智慧开悟',
-    'filter.purpose.blessing': '祈福消灾',
-    'filter.purpose.purification': '消业障',
-    'filter.purpose.meditation': '禅修',
+    'filter.purpose.wisdom': '开启智慧',
+    'filter.purpose.blessing': '积累功德',
+    'filter.purpose.purification': '消除业障',
+    'filter.purpose.meditation': '禅修入定',
 
-    'filter.deity': '本尊',
+    'filter.deity': '本尊法门',
     'filter.deity.guanyin': '观世音菩萨',
     'filter.deity.amitabha': '阿弥陀佛',
     'filter.deity.shakyamuni': '释迦牟尼佛',
     'filter.deity.medicine': '药师佛',
 
-    'filter.school': '宗派',
+    'filter.school': '宗派传承',
     'filter.school.chan': '禅宗',
     'filter.school.pure-land': '净土宗',
     'filter.school.tantra': '密宗',
@@ -130,6 +132,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     'worship.error.sensitive-words': '请文明祈愿，不要包含不当词汇',
     'worship.error.empty-wish': '请先填写祈愿',
     'worship.error.sensitive-content': '祈愿内容包含不当词汇，请修改后重试',
+
+    // 经文分类
+    'category.wisdom': '智慧',
+    'category.blessing': '功德',
+    'category.purification': '消业',
+    'category.meditation': '禅修',
   },
   'zh-TW': {
     // 導航
@@ -141,13 +149,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 藏經閣
     'library.title': '藏經閣',
-    'library.subtitle': '探索佛法智慧，尋找心靈歸宿',
-    'library.search.placeholder': '搜索經文、關鍵字、主題...',
-    'library.recommended': '推薦經書',
+    'library.subtitle': '在此您可以閱讀和聆聽佛教經典，感受佛法的智慧與慈悲',
+    'library.search.placeholder': '搜索經文、關鍵詞...',
+    'library.recommended': '推薦經典',
     'library.recent': '最近閱讀',
     'library.no-records': '暫無閱讀記錄',
-    'library.search': '搜索',
-    'library.suggestions': '建議搜索',
+    'library.suggestions': '熱門搜索',
 
     // 心願展示台
     'wishes.title': '心願展示台',
@@ -179,19 +186,22 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 經書相關
     'sutra.heart': '般若波羅蜜多心經',
-    'sutra.heart.description': '佛教最精簡、最重要的經典之一，闡述"色即是空，空即是色"的般若智慧',
+    'sutra.heart.description': '佛教最簡短而精華的經典，闡述"色即是空，空即是色"的般若智慧',
     'sutra.heart.short': '心經',
     'sutra.heart.full': '般若波羅蜜多心經',
     'sutra.diamond': '金剛般若波羅蜜經',
-    'sutra.diamond.description': '禪宗六祖慧能聞一句而開悟的經典，講述"應無所住而生其心"的真諦',
+    'sutra.diamond.description': '闡述"應無所住而生其心"的般若系重要經典',
     'sutra.amitabha': '阿彌陀經',
     'sutra.amitabha.description': '淨土宗的根本經典，介紹西方極樂世界和念佛往生的法門',
-    'sutra.avalokitesvara.short': '普門品',
+    'sutra.avalokitesvara.short': '觀音經',
     'sutra.avalokitesvara.full': '妙法蓮華經 · 觀世音菩薩普門品',
     'sutra.avalokitesvara.description': '闡述大慈大悲觀世音菩薩的救苦救難本願力',
     'sutra.great-compassion.short': '大悲咒',
     'sutra.great-compassion.full': '千手千眼觀世音菩薩廣大圓滿無礙大悲心陀羅尼',
     'sutra.great-compassion.description': '千手千眼觀世音菩薩的心咒，具有不可思議的加持力',
+    'sutra.medicine': '藥師琉璃光如來本願功德經',
+    'sutra.medicine.description': '闡述藥師佛十二大願，消除疾病與災難的殊勝經典',
+    'sutra.compassion': '大悲心陀羅尼經',
     'sutra.category.wisdom': '智慧開悟',
     'sutra.category.blessing': '祈福',
     'sutra.category.purification': '消業',
@@ -216,18 +226,18 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // 分類篩選
     'filter.purpose': '修行目的',
-    'filter.purpose.wisdom': '智慧開悟',
-    'filter.purpose.blessing': '祈福消災',
-    'filter.purpose.purification': '消業障',
-    'filter.purpose.meditation': '禪修',
+    'filter.purpose.wisdom': '開啟智慧',
+    'filter.purpose.blessing': '積累功德',
+    'filter.purpose.purification': '消除業障',
+    'filter.purpose.meditation': '禪修入定',
 
-    'filter.deity': '本尊',
+    'filter.deity': '本尊法門',
     'filter.deity.guanyin': '觀世音菩薩',
     'filter.deity.amitabha': '阿彌陀佛',
     'filter.deity.shakyamuni': '釋迦牟尼佛',
     'filter.deity.medicine': '藥師佛',
 
-    'filter.school': '宗派',
+    'filter.school': '宗派傳承',
     'filter.school.chan': '禪宗',
     'filter.school.pure-land': '淨土宗',
     'filter.school.tantra': '密宗',
@@ -260,5 +270,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'worship.error.sensitive-words': '請文明祈願，不要包含不當詞彙',
     'worship.error.empty-wish': '請先填寫祈願',
     'worship.error.sensitive-content': '祈願內容包含不當詞彙，請修改後重試',
+
+    // 經文分類
+    'category.wisdom': '智慧',
+    'category.blessing': '功德',
+    'category.purification': '消業',
+    'category.meditation': '禪修',
   }
 } 

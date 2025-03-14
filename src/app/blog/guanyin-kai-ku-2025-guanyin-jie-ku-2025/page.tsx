@@ -113,29 +113,27 @@ export default function GuanYinKaiKu2025() {
       </div>
 
       {/* 观音开库与借库的祈愿时间 */}
-      <section className="mb-8 sm:mb-16 bg-light-gold/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-md border border-primary-gold/20">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-kai font-bold text-burgundy mb-4 sm:mb-6">
-          观音开库与借库的祈愿时间
-        </h2>
-        <div className="text-lg leading-loose text-black font-song space-y-6">
-          <p>
-            选择正确的时机进行观音开库或借库的祈愿，是信徒们非常关注的事项。不同的时间段有不同的象征意义和祈愿效果。
-          </p>
-          <div>
-            <h3 className="font-bold mb-2">1. 观音开库的最佳时间</h3>
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>观音菩萨诞辰（农历二月十九）：观音菩萨的生日，是进行开库祈愿的最佳时机。</li>
-              <li>每月的观音日（每月的初一、十五、二十九等）：这些日子也是传统的观音日。</li>
-              <li>大年初一（农历新年）：新年是一个新的开始，也是祈求来年财富与顺利的好时机。</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">2. 观音借库的最佳时间</h3>
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>紧急需要时：当信徒遭遇经济困境或突发状况时。</li>
-              <li>每月的观音日：同样适合进行借库祈愿。</li>
-              <li>农历四月初八（佛诞日）：此日是佛陀的诞生之日，也是祈愿的重要时机。</li>
-            </ul>
+      <section className="mb-16 bg-light-gold/50 backdrop-blur-sm rounded-xl p-8 shadow-md border border-primary-gold/20">
+        <h2 className="text-xl lg:text-2xl font-kai font-bold text-burgundy mb-6">观音开库与借库的祈愿时间</h2>
+        <div className="text-lg leading-loose text-black font-song">
+          <p>选择正确的时机进行观音开库或借库的祈愿，是信徒们非常关注的事项。不同的时间段有不同的象征意义和祈愿效果。</p>
+          <div className="space-y-6 mt-4">
+            <div>
+              <h3 className="font-bold mb-2">一、观音开库的最佳时间</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><Link href="/blog/guanyin-dan-bai-bai-zheng-que-fang-shi" className="text-burgundy hover:text-primary-gold transition-colors">观音菩萨诞辰</Link>（农历二月十九）：观音菩萨的生日，是进行开库祈愿的最佳时机。</li>
+                <li>每月的观音日（每月的初一、十五、二十九等）：这些日子也是传统的观音日。</li>
+                <li>大年初一（农历新年）：新年是一个新的开始，也是祈求来年财富与顺利的好时机。</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-2">二、观音借库的最佳时间</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>紧急需要时：当信徒遭遇经济困境或突发状况时。</li>
+                <li>每月的观音日：同样适合进行借库祈愿。</li>
+                <li>农历四月初八（佛诞日）：此日是佛陀的诞生之日，也是祈愿的重要时机。</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

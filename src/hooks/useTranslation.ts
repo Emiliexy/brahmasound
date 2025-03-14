@@ -15,7 +15,7 @@ export const useTranslation = () => {
 
     if (params) {
       return Object.entries(params).reduce(
-        (acc, [key, value]) => acc.replace(`{{${key}}}`, String(value)),
+        (acc, [key, value]) => acc.replace(`{${key}}`, String(value)),
         translation
       )
     }
